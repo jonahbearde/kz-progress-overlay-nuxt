@@ -13,6 +13,7 @@
     "@formkit/auto-animate": "^0.8.2",
     "nuxt": "^4.0.1",
     "radash": "^12.1.1",
+    "undici": "^7.15.0",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
   },

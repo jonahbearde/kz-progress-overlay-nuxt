@@ -156,6 +156,7 @@ async function connect() {
   const socket = new WebSocket(config.public.gsiServer)
 
   socket.onopen = () => {
+    console.log('opened')
     socket.send("")
   }
 

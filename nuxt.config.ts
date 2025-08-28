@@ -11,7 +11,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     steamApiKey: "",
     public: {
-      gsiServer: ""
+      gsiServer: "",
+      proxyServer: ""
     }
   },
   ssr: false

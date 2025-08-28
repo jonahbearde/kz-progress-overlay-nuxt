@@ -1,3 +1,5 @@
+import { ProxyAgent } from "undici"
+
 interface SteamPlayerResponse {
   response: {
     players: Record<string, any>[]
@@ -5,10 +7,15 @@ interface SteamPlayerResponse {
 }
 
 export default defineEventHandler(async (event) => {
-  const { steamApiKey } = useRuntimeConfig(event)
+  const { steamApiKey, proxyServer } = useRuntimeConfig(event)
 
   const { steamIds } = getQuery(event)
-  console.log("steamids", steamIds)
+
+  let proxyAgent: ProxyAgent | undefined = undefined
+
+  if (proxyServer) {
+    proxyAgent = new ProxyAgent(proxyServer)
+  }
 
   try {
     const result = await $fetch<SteamPlayerResponse | never[]>(
@@ -17,7 +24,8 @@ export default defineEventHandler(async (event) => {
         params: {
           key: steamApiKey,
           steamids: steamIds
-        }
+        },
+        dispatcher: proxyAgent
       }
     )
 

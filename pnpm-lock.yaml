@@ -17,6 +17,9 @@ importers:
       radash:
         specifier: ^12.1.1
         version: 12.1.1
+      undici:
+        specifier: ^7.15.0
+        version: 7.15.0
       vue:
         specifier: ^3.5.18
         version: 3.5.18(typescript@5.9.2)
@@ -3504,6 +3507,10 @@ packages:
 
   undici-types@7.10.0:
     resolution: {integrity: sha512-t5Fy/nfn+14LuOc2KNYg75vZqClpAiqscVvMygNnlsHBFpSXdJaYtXMcdNLpl/Qvc3P2cB3s6lOV51nqsFq4ag==}
+
+  undici@7.15.0:
+    resolution: {integrity: sha512-7oZJCPvvMvTd0OlqWsIxTuItTpJBpU1tcbVl24FMn3xt3+VSunwUasmfPJRE57oNO1KsZ4PgA1xTdAX4hq8NyQ==}
+    engines: {node: '>=20.18.1'}
 
   unenv@2.0.0-rc.19:
     resolution: {integrity: sha512-t/OMHBNAkknVCI7bVB9OWjUUAwhVv9vsPIAGnNUxnu3FxPQN11rjh0sksLMzc3g7IlTgvHmOTl4JM7JHpcv5wA==}
@@ -7599,6 +7606,8 @@ snapshots:
 
   undici-types@7.10.0:
     optional: true
+
+  undici@7.15.0: {}
 
   unenv@2.0.0-rc.19:
     dependencies:
